@@ -1,0 +1,90 @@
+// Code goes here
+
+/*var first = {value:3}
+var middle = {value:5}
+var last = {value:7}
+first.next = middle
+middle.next = last
+
+
+var printResults = function(node){
+  while(node!=null)
+    {
+      console.log(node.value)
+      node = node.next;
+    }
+}
+
+
+
+printResults(first)*/
+
+var head = null
+var tail = null
+var positionCount = 0
+var count = 0
+
+var printResults = function(node) {
+  while (node != null) {
+    console.log(node.value)
+    node = node.next;
+  }
+}
+
+var addFirst = function(node) {
+    temp = head
+    head = node
+    head.next = temp
+    printResults(head)
+    count ++
+    if(count==1){
+     tail=head
+    }
+}
+
+var addLast = function(node) {
+  if(count==0){
+    head = node
+  }
+  else{
+    tail.next = node
+  }
+  tail = node;
+  count ++
+  printResults(head)
+}
+
+var addMiddle = function(node,position){
+      while(head!=null && positionCount!=position){
+        //console.log(head)
+        //console.log(positionCount)
+        head = head.next
+        positionCount++
+      }
+     temp = node
+     temp.next = head.next
+     head.next = temp
+     printResults(head)
+  }
+
+var one = {
+  value: 3
+}
+var two = {
+  value: 5
+}
+var three = {
+  value: 7
+}
+var four = {
+  value: 9
+}
+var five = {
+  value: 11
+}
+
+addFirst(one)
+addFirst(two)
+addFirst(three)
+addLast(four)
+addMiddle(five,1)

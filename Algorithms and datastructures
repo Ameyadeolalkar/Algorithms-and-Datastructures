@@ -1,0 +1,6 @@
+Algorithms and datastructures
+
+Linked list
+
+Key insertion is the biggest benefit. If there is a new node that is to be added to the beginning of a linked list, the head pointer points to the new node and the tail pointer points to the last node. if this was done to an array, all the elements in an array would have to be shifted and if the array was full, additional memory would have to be allocated. this would result in a lot of operational losses. the complexity of a linked list remains constant irrespective of the number of nodes added
+
